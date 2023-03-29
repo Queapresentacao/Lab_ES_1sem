@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        let dado = [];
+
+        function adicionar() {
+            input = document.getElementById("input-item");
+            let newValue = input.value;
+            dado.push(newValue);
+            dado.sort();
+
+            let list = document.getElementById("list-items");
+            list.innerHTML = "";
+
+            dado.forEach((value) => {
+                let item = document.createElement("li");
+                let text = document.createTextNode(value);
+                item.appendChild(text);
+                list.appendChild(item);
+            });
+        }
+    </script>
+
+    <form action="" method="post">
+        <label for="input-item">Digite: </label>
+        <input type="text" name="item-list" id="input-item" onkeydown="handleKey(event)" />
+        <input type="button" value="Ok" id="input-button" onclick="adicionar()" />
+    </form>
+    <ul id="list-items"></ul>
+</body>
+</html>
