@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATV 1</title>
+
+</head>
+<body>
+    <script>
+        let dado = prompt("Digite um dado: "," ");
+
+        if(confirm("Deseja verificar o tipo do dado informado?")){  
+            if (!isNaN(dado)) {
+                tipo = parseInt(dado);
+                document.write("O tipo do dado é: "+ typeof(tipo));
+            }
+            else {
+                if (dado == "true" || dado == "false"){
+                    tipo = false;
+                    document.write("O tipo do dado é: "+ typeof(tipo));
+                }
+                else {
+                    document.write("O tipo do dado é: "+ typeof(dado));
+                }
+            }
+        }
+        else{
+            document.write("Obrigado por visitar esta página!");
+        }
+    </script>
+</body>
+</html>
